@@ -10,23 +10,25 @@ body {
 	margin: 0;
 }
 
-h1, h2, h3, h4, h5  {
+h1, h2, h3, h4, h5 , h6 {
 	margin: 10px 0px;
 	color: #D34E24;
 }
 
 p {
-		
+	font-size: 12pt;
 }
 
 #container {
     background-color: white;
+	max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #header {
 	padding: 5px 10px;	
 	background-color: #D8C0AD;
-	border-bottom: black 1px solid;
 }
 
 #navigation {
@@ -79,7 +81,8 @@ p {
 
 
 #content {	
-	padding: 10px;	
+	padding: 10px 20px;
+	min-height: 500px;
 }
 
 #footer {
@@ -118,12 +121,12 @@ p {
 	overflow: hidden;
 }
 
-.footerblock ul li a{
+.footerblock a{
 	color: white;
 	text-decoration: none;
 }
 
-.footerblock ul li a:hover{
+.footerblock a:hover{
 	color: #4286F4;
 }
 
