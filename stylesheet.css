@@ -1,16 +1,18 @@
 /*
-	https://coolors.co/161925-23395b-406e8e-8ea8c3-cbf7ed
+	https://coolors.co/d34e24-f78769-c47335-c49775-d8c0ad
+	http://paletton.com/#uid=10a0u0kipu+8vP2dME1mlr9qfmJ
 */
 
 body {
-	font-family: 'Segoe UI';
+	font-family: 'Oswald', sans-serif;
 	color: black;
+	background-color: #C2BFBF;
 	margin: 0;
 }
 
 h1, h2, h3, h4, h5  {
-	font-family: 'Open Sans';
 	margin: 10px 0px;
+	color: #D34E24;
 }
 
 p {
@@ -19,17 +21,16 @@ p {
 
 #container {
     background-color: white;
-	padding-bottom: 5px;
 }
 
 #header {
 	padding: 5px 10px;	
-	background-color: white;
+	background-color: #D8C0AD;
+	border-bottom: black 1px solid;
 }
 
 #navigation {
 	overflow: auto;
-	border-bottom: black 1px solid;
 }
 
 #navigation ul {
@@ -44,19 +45,24 @@ p {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden;  
 }
-
+	
+#navbar-left a{
+	text-decoration: none;
+    color: black;
+}
+	
 #navbar-right {
 	float: right;
 }
 
-#navigation ul li {	
+#navbar-right li {	
 	display: inline;
 	float: left;
 }
 
-#navigation ul li a {
+#navbar-right li a {
     display: block;
     color: black;
     text-align: center;
@@ -64,7 +70,7 @@ p {
     padding: 15px;
 }
 
-#navigation ul li a:hover {
+#navbar-right li a:hover {
 	color: gray;
 }
 
@@ -75,3 +81,78 @@ p {
 #content {	
 	padding: 10px;	
 }
+
+#footer {
+	background-color: #222;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+    overflow: hidden;
+}
+
+.footerrow {
+	display: flex;
+	max-width: 90%;
+    margin-left: auto; 
+    margin-right: auto
+}
+
+.footerblock {
+	float: left;
+	padding: 10px;
+	width: 30%;
+	display: inline-block;
+	color: white;
+}
+
+.footerblock ul {
+	padding-left: 2px;
+}
+
+
+.footerblock ul li {
+	list-style-type: none;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.footerblock ul li a{
+	color: white;
+	text-decoration: none;
+}
+
+.footerblock ul li a:hover{
+	color: #4286F4;
+}
+
+.social {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;	
+}
+
+.social li {
+	height: 32px;
+	padding-left: 40px;
+	padding-top: 4px;
+}
+
+.ico-linkedin {
+	background: url('./ico/social-1_round-linkedin.svg') no-repeat left top;
+}
+
+.ico-facebook {
+	background: url('./ico/social-1_round-facebook.svg') no-repeat left top;
+}
+
+.ico-github {
+	background: url('./ico/social-1_round-github.svg') no-repeat left top;
+}
+
+.ico-wordpress {
+	background: url('./ico/social-1_round-wordpress.svg') no-repeat left top;
+}
+
+
