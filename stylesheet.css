@@ -1,0 +1,77 @@
+/*
+	https://coolors.co/161925-23395b-406e8e-8ea8c3-cbf7ed
+*/
+
+body {
+	font-family: 'Segoe UI';
+	color: black;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5  {
+	font-family: 'Open Sans';
+	margin: 10px 0px;
+}
+
+p {
+		
+}
+
+#container {
+    background-color: white;
+	padding-bottom: 5px;
+}
+
+#header {
+	padding: 5px 10px;	
+	background-color: white;
+}
+
+#navigation {
+	overflow: auto;
+	border-bottom: black 1px solid;
+}
+
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navbar-left {
+	float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#navbar-right {
+	float: right;
+}
+
+#navigation ul li {	
+	display: inline;
+	float: left;
+}
+
+#navigation ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+}
+
+#navigation ul li a:hover {
+	color: gray;
+}
+
+.active {
+}
+
+
+#content {	
+	padding: 10px;	
+}
