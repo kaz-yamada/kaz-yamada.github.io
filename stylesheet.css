@@ -27,13 +27,13 @@ p {
 }
 
 #header {
-	padding: 5px 10px;	
 	background-color: #D8C0AD;
 }
 
 #navigation {
 	overflow: auto;
 }
+
 
 #navigation ul {
     list-style-type: none;
@@ -73,7 +73,8 @@ p {
 }
 
 #navbar-right li a:hover {
-	color: gray;
+	color: white;
+	background-color: #D34E24;
 }
 
 .active {
@@ -92,6 +93,11 @@ p {
 	padding-top: 3px;
 	padding-bottom: 3px;
     overflow: hidden;
+	color: white;
+}
+
+.logo {
+	padding: 0px 10px;
 }
 
 .footerrow {
