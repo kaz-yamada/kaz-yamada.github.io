@@ -2,9 +2,12 @@
 <head>
 	<title>Kazuki's webpage</title>
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
-	<link rel="stylesheet" href="stylesheet.css">	
+	<link rel="stylesheet" href="stylesheet.css">
+	<script src="sitescripts.js"></script>
+	
+
 </head>
-<body>
+<body onload="getAge()">
 <div id="container">
 <div id="header">
 	<div id="navigation">
@@ -18,13 +21,30 @@
 	</div>
 </div>
 <div id="content">
-	<p>Hi, I am Kazuki and I am a <span></span> year old student in Sydney learning to code.</p>
-	<h3>Previous Work</h3>
-	<p>
-		<ul>
-			<li><a href="https://www-student.it.uts.edu.au/~kayamada/">HTML web page created for the subject Web Systems in Autumn semester 2016</a></li>
-		</ul>
-	</p>
+	<p>Hi, I am Kazuki and I am a <span id="age"></span> year old student in Sydney learning to code.</p>
+	<h2>Previous Work</h2>
+	<h3>Web development</h3>	
+	<ul>
+		<li>
+			<a href="https://www-student.it.uts.edu.au/~kayamada/">HTML web page created for the subject Web Systems in Autumn semester 2016</a>
+		</li>	
+	</ul>
+	<h3>C++ program source codes:</h3>
+	<ul>
+		<li><a href="https://github.com/kaz-yamada/euro_translator">Euro-English translator - Command line program to translate English into Euro-English (Explanation of Euro-English here)</a></li>
+		<li><a href="https://github.com/kaz-yamada/morsecode">Morse code translator - Command line program to translate Morse code into English and vice versa</a></li>
+	</ul>
+
+	<h3>C program source codes:</h3>
+	<ul>
+		<li><a href="https://github.com/kaz-yamada/findpairs">findpairs.c - Creates a deck of cards, shuffles, and finds pairs from 5 hands</a></li>
+		<li><a href="https://github.com/kaz-yamada/my_CLI">Simple CLI - A command line program</a></li>
+	</ul>
+
+	<h3>Database Programming assingmnent (written in oracle SQL):</h3>
+	<ul>
+		<li><a href="https://github.com/kaz-yamada/Smartcard-Settlement">GitHub Repo</a> - This is the package that I wrote for the Database Programming subject at UTS. Involves getting transactions from a table, and calculating the amount due to each vendor. <a href="https://github.com/kaz-yamada/Smartcard-Settlement/blob/master/FSS%20Design%20Document.pdf">Desgin Document</li>
+	</ul>
 </div>
 <div id="footer">
 <div class="footerrow">
