@@ -10,8 +10,6 @@
 body {
 	font-family: 'Oswald', sans-serif;
 	color: black;
-	background-color: #C2BFBF;
-	margin: 0;
 }
 
 h1, h2, h3, h4, h5 , h6 {
@@ -19,126 +17,46 @@ h1, h2, h3, h4, h5 , h6 {
 	color: #D34E24;
 }
 
-p {
-	font-size: 12pt;
+.navbar {
+	border-radius: 0px;
+	border: none;
 }
 
-#container {
-    background-color: white;
-	max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+.navbar li a {
+	color: #222 !important
 }
 
-#header {
-	background-color: #D8C0AD;
+.navbar-header .navbar-brand {
+	color: #D34E24;
+	padding-top: 14px;
 }
 
-#navigation {
-	overflow: auto;
+.navbar-nav li.active a {
+	background-color: #222 !important;
+	color: white !important;
 }
 
-
-#navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.navbar-nav li:hover, .navbar-nav li.active a:hover {
+	background-color: #D34E24 !important;
+	color: white !important;
 }
 
-#navbar-left {
-	float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;  
-}
-	
-#navbar-left a{
-	text-decoration: none;
-    color: black;
-}
-	
-#navbar-right {
-	float: right;
+.content {
+	margin-top: 50px;
 }
 
-#navbar-right li {	
-	display: inline;
-	float: left;
-}
-
-#navbar-right li a {
-    display: block;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    padding: 15px;
-}
-
-#navbar-right li a:hover {
-	color: white;
-	background-color: #D34E24;
-}
-
-#navbar-right li .active {
+footer {
 	background-color: #222;
 	color: white;
-}
-
-
-#content {	
-	padding: 10px 20px;
-	min-height: 500px;
-}
-
-#footer {
-	background-color: #222;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-    overflow: hidden;
-	color: white;
-}
-
-.logo {
-	padding: 0px 10px;
-}
-
-.footerrow {
-	display: flex;
-	max-width: 90%;
-    margin-left: auto; 
-    margin-right: auto
-}
-
-.footerblock {
 	padding: 10px;
-	width: 30%;
-	display: inline-block;
+}
+
+footer a {
 	color: white;
 }
 
-.footerblock ul {
-	padding-left: 2px;
-}
-
-
-.footerblock ul li {
-	list-style-type: none;
-	display: block;
-	position: relative;
-	overflow: hidden;
-}
-
-.footerblock a{
-	color: white;
+footer a:hover  {
 	text-decoration: none;
-}
-
-.footerblock a:hover{
-	color: #4286F4;
 }
 
 .social {
@@ -148,9 +66,9 @@ p {
 }
 
 .social li {
-	height: 32px;
+	height: 40px;
 	padding-left: 40px;
-	padding-top: 4px;
+	padding-top: 6px;
 }
 
 .ico-linkedin {
