@@ -1,137 +1,78 @@
 /*
 	https://coolors.co/d34e24-f78769-c47335-c49775-d8c0ad
 	http://paletton.com/#uid=10a0u0kipu+8vP2dME1mlr9qfmJ
+
 */
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:300');
+
 
 body {
 	font-family: 'Oswald', sans-serif;
 	color: black;
-	background-color: #C2BFBF;
-	margin: 0;
+	font: 130%;
 }
 
 h1, h2, h3, h4, h5 , h6 {
 	margin: 10px 0px;
 	color: #D34E24;
+	font-size: 150%;
 }
 
-p {
-	font-size: 12pt;
-}
-
-#container {
-    background-color: white;
-	max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#header {
-	background-color: #D8C0AD;
-}
-
-#navigation {
-	overflow: auto;
-}
-
-
-#navigation ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-#navbar-left {
-	float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;  
-}
-	
-#navbar-left a{
-	text-decoration: none;
-    color: black;
-}
-	
-#navbar-right {
-	float: right;
-}
-
-#navbar-right li {	
-	display: inline;
-	float: left;
-}
-
-#navbar-right li a {
-    display: block;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    padding: 15px;
-}
-
-#navbar-right li a:hover {
-	color: white;
+.jumbotron {
+	padding: 150px 25px 25px 25px ;
 	background-color: #D34E24;
+	color: white;
 }
 
-.active {
+.container-fluid, .container {
+    padding: 60px 50px;
+	font-size: 110%;
+}
+
+.nav {
+	padding: 0px;
+}
+
+.navbar {
+	border-radius: 0px;
+	border: none;
+	background-color: #D34E24;
+	color: white;
 }
 
 
-#content {	
-	padding: 10px 20px;
-	min-height: 500px;
+.navbar li a {
+	color: white !important
 }
 
-#footer {
+.navbar-header .navbar-brand {
+	color: white;
+	padding-top: 14px;
+}
+
+.navbar-nav li.active a {
+	background-color: #222 !important;
+	color: white !important;
+}
+
+.navbar-nav li:hover, .navbar-nav li.active a:hover {
+	background-color: #222 !important;
+	color: white !important;
+}
+
+footer {
 	background-color: #222;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-    overflow: hidden;
 	color: white;
-}
-
-.logo {
-	padding: 0px 10px;
-}
-
-.footerrow {
-	display: flex;
-	max-width: 90%;
-    margin-left: auto; 
-    margin-right: auto
-}
-
-.footerblock {
 	padding: 10px;
-	width: 30%;
-	display: inline-block;
+}
+
+footer a {
 	color: white;
 }
 
-.footerblock ul {
-	padding-left: 2px;
-}
-
-
-.footerblock ul li {
-	list-style-type: none;
-	display: block;
-	position: relative;
-	overflow: hidden;
-}
-
-.footerblock a{
-	color: white;
+footer a:hover  {
 	text-decoration: none;
-}
-
-.footerblock a:hover{
 	color: #4286F4;
 }
 
@@ -142,9 +83,9 @@ p {
 }
 
 .social li {
-	height: 32px;
+	height: 40px;
 	padding-left: 40px;
-	padding-top: 4px;
+	padding-top: 1px;
 }
 
 .ico-linkedin {
@@ -162,5 +103,3 @@ p {
 .ico-wordpress {
 	background: url('../ico/social-1_round-wordpress.svg') no-repeat left top;
 }
-
-
