@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5 , h6 {
 }
 
 .navbar-nav li.active a {
-	background-color: #222 !important;
+	background-color: #808080 !important;
 	color: white !important;
 }
 
