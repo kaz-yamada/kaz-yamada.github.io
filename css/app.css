@@ -10,24 +10,44 @@
 body {
 	font-family: 'Oswald', sans-serif;
 	color: black;
+	font: 130%;
 }
 
 h1, h2, h3, h4, h5 , h6 {
 	margin: 10px 0px;
 	color: #D34E24;
+	font-size: 150%;
+}
+
+.jumbotron {
+	padding: 150px 25px 25px 25px ;
+	background-color: #D34E24;
+	color: white;
+}
+
+.container-fluid, .container {
+    padding: 60px 50px;
+	font-size: 110%;
+}
+
+.nav {
+	padding: 0px;
 }
 
 .navbar {
 	border-radius: 0px;
 	border: none;
+	background-color: #D34E24;
+	color: white;
 }
 
+
 .navbar li a {
-	color: #222 !important
+	color: white !important
 }
 
 .navbar-header .navbar-brand {
-	color: #D34E24;
+	color: white;
 	padding-top: 14px;
 }
 
@@ -37,12 +57,8 @@ h1, h2, h3, h4, h5 , h6 {
 }
 
 .navbar-nav li:hover, .navbar-nav li.active a:hover {
-	background-color: #D34E24 !important;
+	background-color: #222 !important;
 	color: white !important;
-}
-
-.content {
-	margin-top: 50px;
 }
 
 footer {
@@ -57,6 +73,7 @@ footer a {
 
 footer a:hover  {
 	text-decoration: none;
+	color: #4286F4;
 }
 
 .social {
@@ -68,7 +85,7 @@ footer a:hover  {
 .social li {
 	height: 40px;
 	padding-left: 40px;
-	padding-top: 6px;
+	padding-top: 1px;
 }
 
 .ico-linkedin {
@@ -86,5 +103,3 @@ footer a:hover  {
 .ico-wordpress {
 	background: url('../ico/social-1_round-wordpress.svg') no-repeat left top;
 }
-
-
