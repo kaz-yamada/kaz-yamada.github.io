@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5 , h6 {
 
 .navbar-nav li:hover, .navbar-nav li.active a:hover {
 	background-color: #F78769 !important;
-	color: white !important;
+	color: black !important;
 }
 
 .warning {
