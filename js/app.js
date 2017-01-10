@@ -11,30 +11,44 @@ function getAge() {
 	return age;
 }
 
-function convertToMetric() {
+/*
+	Convert feet and inches into centimeters
+*/
+function convertToMetric(inches, foot) {
 	// Parse user's height
-	var inches = parseFloat($('#heightInches').val());
-	var foot = parseFloat($('#heightFeet').val());
+	inches = parseFloat(inches);
+	foot = parseFloat(foot);
 
-	// Find the height in centimeters
+	// Convert feet into inches
 	var metricHeight = (foot * _IN_PER_FT) + inches;
+	// Convert inches into cm
+	metricHeight *= _CM_PER_INCH;
+
 	return foot + ' ft ' + inches + ' = ' + metricHeight + 'cm<br>';
 
 }
 
-function convertToImperial() {
-	// Get user's height in metric
-	var metricHeight = $('#heightMetric').val();
+/*
+	Convert metric into feet and inches
+*/
+function convertToImperial(metricHeight) {
+
+	// Convert text into float
+	metricHeight = parseFloat(metricHeight);
+	// Find out the selected option of measurement
 	var metricOption = $('#metricOption').val();
+
+	var imperialHeight = metricHeight;
 
 	// Convert to centimeters
 	if (metricOption == 'mm')
-		metricHeight = metricHeight * 10;
-	else if (metricOption == 'm')
-		metricHeight = metricHeight / 10;
+		imperialHeight /= 10;
+
+	if (metricOption == 'meters')
+		imperialHeight *= 10;
 
 	// Convert metric to inches
-	var imperialHeight = metricHeight / _CM_PER_INCH;
+	var imperialHeight = imperialHeight / _CM_PER_INCH;
 
 	// Divide into feet and inches
 	var heightFt = Math.floor(imperialHeight / _IN_PER_FT);
@@ -47,34 +61,50 @@ $(document).ready(function () {
 	$("#age").text(getAge());
 });
 
-/* 
-	Convert to feet and inches is clicked
+/*
+	Restrict to enterying numbers only
 */
-$('#convertImperial').click(function () {
+$(".numbersOnly").keyup(function () {
+	this.value = this.value.replace(/[^0-9\.]/g, '');
+});
+
+/* 
+	Convert from feet and inches is clicked
+*/
+$('#convertFromImperial').click(function () {
 	var inches = parseFloat($('#heightInches').val());
 	var foot = parseFloat($('#heightFeet').val());
 
-	if (isNaN(inches) || isNaN(foot) ) {
-		$('#imperialWarning').text("Height must be a number");
+	if (isNaN(foot)) {
+		$('#feetWarning').text("Height must be a number");
+	}
+	if (Number.isNaN(inches)) {
+		$('#inchWarning').text("Height must be a number");
 	}
 	else {
-		$('#result').append(convertToMetric());
-		$('#imperialWarning').text("");
+		$('#result').append(convertToMetric(inches, foot));
+		$('#inchWarning').text("");
+		$('#feetWarning').text("");
 	}
 });
-
 
 /* 
 	Convert to metric is clicked
 */
-$('#convertMetric').click(function () {
-	var metricHeight = $('#heightMetric').val();
+$('#convertFromMetric').click(function () {
+	var metricHeight = parseFloat($('#heightMetric').val());
 
-	if (isNaN(metricHeight) || metricHeight == "" ) {
+	if (Number.isNaN(metricHeight)) {
 		$('#metricWarning').text("Height must be a number");
 	}
 	else {
-		$('#result').append(convertToImperial());
+		$('#result').append(convertToImperial(metricHeight));
 		$('#metricWarning').text("");
 	}
+});
+
+
+$('#clearHeight').click(function () {
+	$('#result').text("");
+	$('#clearHeight').prop('disabled', true);
 });

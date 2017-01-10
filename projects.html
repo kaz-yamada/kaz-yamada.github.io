@@ -37,28 +37,43 @@
 				<legend>Convert feet and inches into centimeters or meters</legend>
 				<div class="col-sm-6">
 					<h5>Feet and inches</h5>
-					<input id="heightFeet" /><label for="heightFeet">&nbsp;feet&nbsp; &nbsp;</label><br>
-					<input id="heightInches" /><label for="heightInches">&nbsp;in.</label>
-					<br><span id="imperialWarning" class="warning"></span>
-					<br><br><button id="convertImperial">Convert feet and inches to centimeters</button>
+					<input id="heightFeet" type="text" class="numbersOnly" /><label for="heightFeet">&nbsp;feet&nbsp;&nbsp;</label>
+					<span id="feetWarning" class="warning"></span><br>
+					<input id="heightInches" type="text" class="numbersOnly" /><label for="heightInches">&nbsp;in.&nbsp;</label>
+					<span id="inchWarning" class="warning"></span><br><br>
+					<button type="button" class="btn btn-default" id="convertFromImperial">Convert feet and inches to centimeters</button>
 					<br><br>
+					
 					<h5>Metric</h5>
-					<input id="heightMetric" />
+					<input id="heightMetric" type="text" class="numbersOnly" />
 					<select id="metricOption">
 						<option value="cm">cm</option>
 						<option value="mm">mm</option>
 						<option value="meters">m</option>
 					</select>
-					<br><span id="metricWarning" class="warning"></span>
-					<br><br><button id="convertMetric">Convert into feet and inches</button>
+					<span id="metricWarning" class="warning"></span>
+					<br><br><button type="button" class="btn btn-default" id="convertFromMetric">Convert into feet and inches</button>
 				</div>
 				<div class="col-sm-6">
+					<h5>Results</h5>
 					<p id="result"></p>
+					<button type="button" class="btn btn-default" id="clearHeight">Clear Results</button>
 				</div>
 			</fieldset>
 		</div>
 	</div>
 
+	<div class="container">
+		<div class="row">
+			<h3></h3>
+			<fieldset>
+				<legend></legend>
+				<div class="col-sm-6">
+
+				</div>
+			</fieldset>
+		</div>
+	</div>
 
 	<footer class="container-fluid">
 		<div class="container">
