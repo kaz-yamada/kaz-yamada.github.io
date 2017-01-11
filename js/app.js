@@ -103,7 +103,9 @@ $('#convertFromMetric').click(function () {
 	}
 });
 
-
+/*
+	Remove the results of the user's converted heights
+*/
 $('#clearHeight').click(function () {
 	$('#result').text("");
 	$('#clearHeight').prop('disabled', true);

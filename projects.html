@@ -26,9 +26,22 @@
 			</ul>
 		</div>
 	</nav>
+	<!-- Static navbar for mobile devices/smaller screens -->
+	<nav class="navbar navbar-default visible-xs visible-sm hidden-md hidden-lg">
+		<div class="container nav">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">Kazuki Yamada</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="projects.html">Mini Projects</a></li>
+			</ul>
+		</div>
+	</nav>
 	<div class="conatiner-fluid bg-2 jumbotron text-center">
-		<h1></h1>
-		<p></p>
+		<h1>Mini Projects</h1>
+		<p>Small projects written in javascript/jquery</p>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -43,7 +56,7 @@
 					<span id="inchWarning" class="warning"></span><br><br>
 					<button type="button" class="btn btn-default" id="convertFromImperial">Convert feet and inches to centimeters</button>
 					<br><br>
-					
+
 					<h5>Metric</h5>
 					<input id="heightMetric" type="text" class="numbersOnly" />
 					<select id="metricOption">
@@ -56,20 +69,8 @@
 				</div>
 				<div class="col-sm-6">
 					<h5>Results</h5>
-					<p id="result"></p>
+					<p id="result"></p><br>
 					<button type="button" class="btn btn-default" id="clearHeight">Clear Results</button>
-				</div>
-			</fieldset>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="row">
-			<h3></h3>
-			<fieldset>
-				<legend></legend>
-				<div class="col-sm-6">
-
 				</div>
 			</fieldset>
 		</div>
