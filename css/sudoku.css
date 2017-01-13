@@ -1,0 +1,17 @@
+
+.board {
+    border: solid medium;
+}
+
+.box {
+    border: solid 1px;
+}
+
+.box tr td input { 
+    border: solid thin;
+    height: 2em;
+    width: 2em;
+    text-align: center; 
+    padding: 0;
+    
+}
