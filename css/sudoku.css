@@ -1,5 +1,5 @@
 
-.board {
+#board {
     border: solid medium;
 }
 
@@ -9,9 +9,9 @@
 
 .box tr td input { 
     border: solid thin;
-    height: 2em;
-    width: 2em;
+    height: 2.5em;
+    width: 2.5em;
     text-align: center; 
-    padding: 0;
-    
+    padding: 0px;
+    margin-left: 0.5px;
 }
