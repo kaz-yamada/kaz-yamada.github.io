@@ -7,11 +7,35 @@
     border: solid 1px;
 }
 
-.box tr td input { 
+.cell  { 
     border: solid thin;
     height: 2.5em;
     width: 2.5em;
     text-align: center; 
     padding: 0px;
     margin-left: 0.5px;
+}
+
+.cell:hover { 
+    background-color: #F2F2F2;
+}
+
+.altbox {
+    background-color: #C7C7C7;
+}
+
+.selected {
+    background-color: #42F498;
+}
+
+.selected:hover {
+   background-color: #0dd96f;
+}
+
+.clue {
+    font-weight: bold;
+}
+
+.incorrect {
+    background-color: #FF0D0D;
 }
