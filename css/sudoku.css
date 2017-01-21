@@ -9,11 +9,11 @@
 
 .cell  { 
     border: solid thin;
-    height: 2.5em;
-    width: 2.5em;
+    height: 3em;
+    width: 3em;
+    
     text-align: center; 
-    padding: 0px;
-    margin-left: 0.5px;
+    padding: 1px;
 }
 
 .cell:hover { 
@@ -37,5 +37,6 @@
 }
 
 .incorrect {
-    background-color: #FF0D0D;
+    color: #FF0D0D;
+    border-color: #FF0D0D;
 }

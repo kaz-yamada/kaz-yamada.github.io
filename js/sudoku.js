@@ -32,68 +32,74 @@ function resetGame() {
 	The
 	@cellObject
 */
-function checkCell(cellObject) {
+function checkCell(selectedCell) {
 
-	var guessVal = parseInt($(cellObject).text()),
-		guessRow = $(cellObject).attr("data-row"),
-		guessCol = $(cellObject).attr("data-column"),
-		guessBox = $(cellObject).attr("data-box");
+	var error = 0;
+	guessVal = parseInt($(selectedCell).text()),
+		row = $(selectedCell).attr("data-row"),
+		col = $(selectedCell).attr("data-column"),
+		box = $(selectedCell).attr("data-box");
 
+	// Search through box, row, and column
 	if (!isNaN(guessVal)) {
-		checkDuplicates(DATA_BOX + guessBox + "]");
-		checkDuplicates(DATA_ROW + guessRow + "]");
-		checkDuplicates(DATA_COL + guessCol + "]");
+		error += checkDuplicates(selectedCell, DATA_BOX + box + "]");
+		error += checkDuplicates(selectedCell, DATA_ROW + row + "]");
+		error += checkDuplicates(selectedCell, DATA_COL + col + "]");
 	}
-	else return false;
 
-	return true;
+	if (error == 0)
+		$(selectedCell).removeClass('incorrect');
+
+
+	return error;
 }
 
 
 /*
-	Funciton loops through box/row/column to checks for duplcates
+	Funciton loops through box/row/column to checks for same numbers
 */
-function checkDuplicates(checkString) {
-	var i, currentVal, isDuplicate = false;
-	$(checkString).each(function (i, cell1) {
-		currentVal = $(cell1).text();
+function checkDuplicates(selectedCell, checkString) {
+	var index, currentVal, selectedVal = $(selectedCell).text(), duplicates = 0;
 
-		if (currentVal != "") {
-			$(checkString).each(function (i, cell2) {
-				if ($(cell2).text() == currentVal && $(cell1).attr("data-cell") != $(cell2).attr("data-cell")) {
-					isDuplicate = true;
-					$(cell1).addClass("incorrect");
-					$(cell2).addClass("incorrect");
-				}
-				else {
-					//$(cell1).removeClass("incorrect");
-				}
-			});
+	$(checkString).each(function (index, currentCell) {
+		currentVal = $(currentCell).text();
+		// Compare id to skip selected cell and compare box/row/column for same numbers
+		if (selectedVal == currentVal && $(currentCell).prop('id') != $(selectedCell).prop('id')) {
+			$(currentCell).addClass('incorrect');
+			$(selectedCell).addClass('incorrect');
+			duplicates += currentVal;
+		}
+		if (currentVal != selectedVal) {
+			$(currentCell).removeClass('incorrect');
 		}
 	});
 
-	return isDuplicate;
+	return duplicates;
 }
 
-/*
 
+
+/*
+	This function draws a 9x9 box
+	@box - the index of the box in the sudoku board
+	@boxRow
+	@boxCol
 */
 function drawBox(box, boxRow, boxCol) {
-	var str = "", cellrow, cellCol, cell = 1;
+	var str, cellrow, cellCol, cell = 1;
 
 	str = "<td><table class='box' data-box=" + box + ">";
 	for (cellrow = 0; cellrow < 3; cellrow++) {
 		str += "<tr>";
 		for (cellCol = 0; cellCol < 3; cellCol++) {
-			str += "<td data-row=" + (cellrow + boxRow)
-				+ " data-column=" + (cellCol + boxCol) + " data-box=" + box + " data-cell="
-				+ cell;
+			str += "<td id=r" + (cellrow + boxRow) + "_c" + (cellCol + boxCol) + "_b" + box + " data-row=" + (cellrow + boxRow)
+				+ " data-column=" + (cellCol + boxCol) + " data-box=" + box + " data-cell=" + cell;
 
 			// Altenate box colour to make it easier to separate the boxes
 			if (box % 2 == 0)
 				str += " class='cell altbox'></td>";
 			else
-				str += " class='cell'" + "></td>";
+				str += " class='cell' ></td>";
 			cell++;
 		}
 		str += "</tr>"
@@ -105,7 +111,6 @@ function drawBox(box, boxRow, boxCol) {
 }
 
 /*
-
 
 */
 function drawBoard() {
@@ -123,22 +128,20 @@ function drawBoard() {
 	$("#board").html(str);
 }
 
-function fillBoard() {
-
+function cellDetails(cell) {
+	return "<br>Box: " + $(cell).attr('data-box') + " Row: " + $(cell).attr('data-row') + " Col: " + $(cell).attr('data-column');
 }
 
 /*
 
 */
 $(document).ready(function () {
-
 	drawBoard();
 	createGame();
 });
 
 
 // Toggle the current selected cell only the current cell
-
 $(function () {
 	$(document).on('click', '.cell', function () {
 		$(".cell").removeClass("selected");
@@ -158,7 +161,9 @@ $("#NewGame").click(function () {
 
 $("#sudokuButtons button").click(function () {
 	$(".selected").text($(this).val());
+
 	checkCell(".selected");
+
 });
 
 /*
