@@ -7,13 +7,22 @@
     border: solid 1px;
 }
 
+.error {
+    color: #FF0D0D;
+    border-color: #FF0D0D;
+}
+
 .cell  { 
-    border: solid thin;
+    border: solid thin black;
     height: 3em;
-    width: 3em;
-    
+    width: 3em;    
     text-align: center; 
     padding: 1px;
+    margin: 5px;
+}
+
+.checked {
+    background-color: #bfccfc
 }
 
 .cell:hover { 
@@ -34,9 +43,4 @@
 
 .clue {
     font-weight: bold;
-}
-
-.incorrect {
-    color: #FF0D0D;
-    border-color: #FF0D0D;
 }
