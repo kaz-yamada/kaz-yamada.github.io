@@ -109,7 +109,6 @@ function sudoku() {
 	_checkCell = function (cellID) {
 		var validCell = true, cell = $('#' + cellID);
 
-
 		console.log('_checkCell - Checking ' + cell.prop('id'));
 
 		// Checkthe cell's column
@@ -138,9 +137,7 @@ function sudoku() {
 				validCell = false;
 			}
 		});
-
-		if (validCell)
-			console.log(cellID + ' - no errors found');
+		
 		return validCell;
 	}
 
