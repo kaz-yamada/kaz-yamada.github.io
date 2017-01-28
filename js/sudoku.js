@@ -98,8 +98,7 @@ function sudoku() {
 				}
 			}
 		}
-
-		//findInvalid();
+		
 		addErr(invalidCells);
 		addErr(invalidCells.length);
 
