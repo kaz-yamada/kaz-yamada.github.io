@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<header>
+	<div class="row expanded">
+		<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+		<h5>{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h5>
+	</div>
+</header>
+
+<div class="page row">
+	<div class="columns">
+		{{ content }}
+	</div>
+</div>
+<!-- Page -->

@@ -1,0 +1,17 @@
+---
+layout: page
+title: Blog
+---
+<div id="post-loop" class="row">
+	<div class="grid-x grid-margin-x">
+		{% for post in paginator.posts %}
+		{% include post-panel.html %}
+		{% endfor %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-12 large-12 cell">
+		<p>subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></p>
+	</div>
+</div>

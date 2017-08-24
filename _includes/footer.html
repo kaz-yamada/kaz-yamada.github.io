@@ -1,0 +1,19 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <p>Cold Sun by <a href="https://kaz-yamada.github.io/">Kazuki Yamada.</a> Powered by Jekyll.</p>
+    </div>
+    <div class="row">
+      <ul class="social-icon-list">
+        {% for social in site.social %} {% if social.url != null %}
+        <li>
+          <a href="{{ social.url }}" title="{{ social.desc }}"><i class="fa fa-{{ social.icon }}"></i></a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER -->
+
+{% include scripts.html %}

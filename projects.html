@@ -1,137 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Kazuki's webpage</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/app.css">
-	<link rel="stylesheet" href="css/sudoku.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/app.js" type="text/javascript"></script>
-</head>
-
-<body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container nav">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">Kazuki Yamada</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="nav-item"><a href="index.html">Home</a></li>
-				<li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-				<li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Other Projects<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="projects.html">Mini Projects</a></li>
-						<li><a href="sudoku.html">Sudoku</a></li>
-					</ul>
-				</li>
-			</ul>
+---
+layout: page
+title: Projects
+description: List of github repositories
+---
+<div id="projects" class="row">
+	<div class="grid-x grid-margin-x">
+		{% for repository in site.github.public_repositories %}
+		<div class="large-12 panel">
+			<h3 class="title">{{ repository.name }}</h3>
+			<p>{{ repository.description }}</p>
+			<a href="{{ repository.html_url }}" class="button">Repository</a>
+			<a href="{{ repository.homepage }}" class="button">Homepage</a>
 		</div>
-	</nav>
-
-	<!-- Static navbar for mobile devices/smaller screens -->
-	<nav class="navbar navbar-default visible-xs visible-sm hidden-md hidden-lg">
-		<div class="container nav">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">Kazuki Yamada</a>
-			</div>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="portfolio.html">Portfolio</a></li>
-				<li class="active"><a href="projects.html">Mini Projects</a></li>
-			</ul>
-		</div>
-	</nav>
-	<div class="conatiner-fluid bg-2 jumbotron text-center">
-		<h1>Mini Projects</h1>
-		<p>Small projects written in javascript/jquery</p>
+		{% endfor %}
 	</div>
-	<div class="container">
-		<div class="row">
-			<h3>Calculate and convert height</h3>
-			<fieldset>
-				<legend>Convert feet and inches into centimeters or meters</legend>
-				<div class="col-sm-6">
-					<h5>Feet and inches</h5>
-					<input id="heightFeet" type="text" class="numbersOnly" /><label for="heightFeet">&nbsp;feet&nbsp;&nbsp;</label>
-					<span id="feetWarning" class="warning"></span><br>
-					<input id="heightInches" type="text" class="numbersOnly" /><label for="heightInches">&nbsp;in.&nbsp;</label>
-					<span id="inchWarning" class="warning"></span><br><br>
-					<button type="button" class="btn btn-default" id="convertFromImperial">Convert feet and inches to centimeters</button>
-					<br><br>
-
-					<h5>Metric</h5>
-					<input id="heightMetric" type="text" class="numbersOnly" />
-					<select id="metricOption">
-						<option value="cm">cm</option>
-						<option value="mm">mm</option>
-						<option value="meters">m</option>
-					</select>
-					<span id="metricWarning" class="warning"></span>
-					<br><br><button type="button" class="btn btn-default" id="convertFromMetric">Convert into feet and inches</button>
-				</div>
-				<div class="col-sm-6">
-					<h5>Results</h5>
-					<p id="result"></p><br>
-					<button type="button" class="btn btn-default" id="clearHeight" disabled>Clear Results</button>
-				</div>
-			</fieldset>
-
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<h1><a href='sudoku.html'>Online Sudoku (Work in progress)</a></h1>
-			<p>A demo/game of sudoku written in jquery/javasctipt</p>
-		</div>
-	</div>
-	<footer class="container-fluid">
-		<div class="container">
-			<div class="col-sm-4">
-				<h4>About</h4>
-				<p>Student, programmer/web developer in training based in Sydney, Australia. Page styled using Bootstrap 3. Social media
-					icons taken from <a href="https://nucleoapp.com/">https://nucleoapp.com/</a></p>
-			</div>
-
-			<div class="col-sm-4">
-				<h4>Follow me</h4>
-				<ul class="social">
-					<a href="https://www.linkedin.com/in/kazuki-yamada-b27616123?trk=nav_responsive_tab_profile">
-						<li class="ico-linkedin">LinkedIn</li>
-					</a>
-					<a href="https://www.facebook.com/kazadamay">
-						<li class="ico-facebook">Facebook</li>
-					</a>
-					<a href="https://github.com/kaz-yamada">
-						<li class="ico-github">GitHub</li>
-					</a>
-					<a href="https://kyamadablog.wordpress.com/">
-						<li class="ico-wordpress">WordPress Blog</li>
-					</a>
-				</ul>
-			</div>
-
-			<div class="col-sm-4">
-				<h4>Navigation</h4>
-				<p><a href="index.html"><b>Home</b>
-				</br>Home page and information on Kazuki</a>
-				</p>
-				<p><a href="portfolio.html"><b>Portfolio</b>
-				</br>Basic information on some of Kazuki's work</a>
-				</p>
-				<p><a href="projects.html"><b>Mini Projects</b>
-				</br>Small miscellaneous projects</a>
-				</p>
-			</div>
-		</div>
-		</div>
-	</footer>
-	<script src="js/app.js"></script>
-	<script src="js/anatomy.js"></script>
-</body>
-</html>
+</div>
