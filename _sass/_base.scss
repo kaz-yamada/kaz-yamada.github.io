@@ -13,9 +13,15 @@ $footer-height: 250px;
 
 $foundation-palette: (primary: $primary-color, secondary: $secondary-color, success: #3adb76, warning: #ffae00, alert: #cc4b37);
 
+
 // Overrite Foundation styling;
 $topbar-title-spacing: 0;
 $titlebar-icon-color-hover: $secondary-color;
+
+$card-background: $body-background;
+$card-font-color: $body-font-color;
+$card-divider-background: $body-background;
+$card-border: 1px solid $primary-color;
 
 // Shamelessly stolen from https://www.sitepoint.com/building-linear-gradient-mixin-sass/
 

@@ -13,9 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Cold Sun
-email: youremail@example.com
-description: This is a website description.
+title: Kazuki Yamada
+email: kaz-yamada@outlook.com
+description: Student, developer, human being.
 
 # the subpath of your site, e.g. /blog
 # If you're hosting your site at a Project repository on GitHub pages
@@ -37,20 +37,20 @@ social:
 
   - name: Facebook
     icon: facebook
-    username:
-    url:
+    username: kazadamay
+    url: "https://www.facebook.com/kazadamay"
     share: true
 
   - name: GitHub
     icon: github
-    username:
-    url:
+    username: kaz-yamada
+    url: "https://github.com/kaz-yamada"
     share: false
 
   - name: LinkedIn
     icon: linkedin
-    username:
-    url:
+    username: kaz-yamada
+    url: "https://www.linkedin.com/in/kazuki-yamada-b27616123?trk=nav_responsive_tab_profile"
     share: true
 
   - name: Google+
@@ -84,11 +84,11 @@ social:
     share: false
 
 author:
-  name   : "Your Name"
+  name   : "Kazuki"
   avatar :
   bio    : "Biography goes here."
   email  : # optional
-  uri    : "http://example.com"
+  uri    : "kaz-yamada.github.io"
 
 # Build settings
 markdown: kramdown
