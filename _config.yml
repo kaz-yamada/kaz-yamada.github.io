@@ -53,10 +53,10 @@ social:
     url: "https://www.linkedin.com/in/kazuki-yamada-b27616123?trk=nav_responsive_tab_profile"
     share: true
 
-  - name: Google+
-    icon: google-plus
+  - name: Codepen
+    icon: codepen
     username:
-    url:
+    url: "https://codepen.io/kaz-yamada/"
     share: true
 
   - name: YouTube
