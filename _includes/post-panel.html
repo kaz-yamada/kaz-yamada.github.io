@@ -1,0 +1,10 @@
+<div class="small-12 medium-6 large-4 cell post-panel">
+  <h3 class="post-loop-title title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+  <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+
+  <div class="post-description">
+    <p>{{ post.excerpt | strip_html | truncate: 120  }}</p>
+  </div>
+
+  <a href="{{ post.url | prepend: site.baseurl }}" class="button">Read More</a>
+</div>

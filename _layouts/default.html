@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body id="defualt">
+	{% include side-canvas.html %}
+	{% include topbar.html %}
+
+	<main class="off-canvas-content row" data-off-canvas-content>
+		{{ content }}
+		{% include footer.html %}
+	</main>
+	<!-- .main-->
+</body>
+
+</html>

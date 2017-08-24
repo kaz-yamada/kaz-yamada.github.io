@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="post">
+	<header>
+		<div class="row expanded">
+			<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+			<h5>{% if page.description %}{{ page.description }}{% endif %}</h5>
+			<span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
+		</div>
+	</header>
+	<!-- Header -->
+
+	<div class="row">
+		<div class="columns">
+			<div class="content">
+				{{ content }}
+			</div>
+		</div><!-- .columns -->
+	</div><!-- .row -->
+</div><!-- .post -->
