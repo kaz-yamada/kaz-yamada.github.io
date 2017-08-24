@@ -6,7 +6,7 @@ description: List of github repositories
 <div id="projects" class="row">
 	<div class="grid-x grid-margin-x">
 		{% for repository in site.github.public_repositories %}
-		<div class="large-12 panel">
+		<div class="large-12 cell panel">
 			<h3 class="title">{{ repository.name }}</h3>
 			<p>{{ repository.description }}</p>
 			<a href="{{ repository.html_url }}" class="button">Repository</a>
