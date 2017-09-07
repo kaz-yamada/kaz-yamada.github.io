@@ -2,20 +2,17 @@
 layout: default
 ---
 <div class="post">
-	<header>
-		<div class="row expanded">
-			<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-			<h5>{% if page.description %}{{ page.description }}{% endif %}</h5>
-			<span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
-		</div>
-	</header>
-	<!-- Header -->
+	{% include header.html %}
 
-	<div class="row">
-		<div class="columns">
-			<div class="content">
+	<div class="page grid-container">
+		<div class="grid-x grid-padding-x grid-margin-y">
+			<div class="cell large-3 medium-4">
+				{% include sidebar.html %}
+			</div>
+			<div id="page-content" class="cell auto">
 				{{ content }}
 			</div>
-		</div><!-- .columns -->
-	</div><!-- .row -->
-</div><!-- .post -->
+		</div>
+	</div>
+</div>
+<!-- .post -->

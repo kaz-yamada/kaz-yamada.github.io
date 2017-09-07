@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+permalink: /Projects/
 description: List of github repositories
 ---
 <div id="projects" class="row">
@@ -10,7 +11,13 @@ description: List of github repositories
 			<h3 class="title">{{ repository.name }}</h3>
 			<p>{{ repository.description }}</p>
 			<a href="{{ repository.html_url }}" class="button">Repository</a>
-			<a href="{{ repository.homepage }}" class="button">Homepage</a>
+			{% if repository.has_pages %}
+				{% if repository.homepage == null or repository.homepage == "" %}
+					<a href="https://{{ repository.owner.login }}.github.io/{{ repository.name }}" class="button">Homepage</a>
+				{% else %}
+					<a href="{{ repository.homepage }}" class="button">Homepage</a>
+				{% endif %}
+			{% endif %}
 		</div>
 		{% endfor %}
 	</div>

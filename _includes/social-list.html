@@ -1,0 +1,23 @@
+{% if include.type "vertical" %}
+<ul class="social-list social-vertical-list">
+  {% for social in site.social %} {% if social.url %}
+  <li>
+    <a href="{{ social.url }}" title="{{ social.desc }}"><i class="fa fa-{{ social.icon }}"></i><span>{{ social.name }}</span></a>
+  </li>
+  {% endif %} {% endfor %}
+</ul>
+{% else %}
+<ul class="social-list social-icon-list">
+  {% for social in site.social %} {% if social.url %}
+  <li>
+    <a href="{{ social.url }}" title="{{ social.desc }}">
+      {% if social.icon %}
+        <i class="fa fa-{{ social.icon }}"></i>
+      {% else %}
+        <i class="fa fa-external-link"></i>
+      {% endif %}
+    </a>
+  </li>
+  {% endif %} {% endfor %}
+</ul>
+{% endif %}

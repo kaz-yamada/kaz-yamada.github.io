@@ -100,15 +100,6 @@ table {
   }
 
   tbody {
-    tr {
-      background-color: $body-background;
-
-      td {
-        border-bottom: 1px solid #ccc;
-        padding: .75em;
-      }
-    }
-
     tr:nth-child(even) {
       background-color: $body-background;
     }
@@ -143,17 +134,39 @@ blockquote::after {
 }
 
 /*--------------------------------------------------------------
+# Foundation Customisation
+--------------------------------------------------------------*/
+select.button {
+  padding-right: 2em;
+}
+
+.accordion {
+  .accordion-title {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+.tabs {
+  .tabs-title,
+  .tabs-title a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+/*--------------------------------------------------------------
  # Social Icons
 ---------------------------------------------------------------*/
 .social-icon-list {
-  padding-left: 0;
+  padding: 0;
+  margin: 0 auto;
 
   li {
     list-style: none;
     line-height: 1.5;
     display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 5px;
 
     a {
       text-decoration: none;
@@ -169,6 +182,27 @@ blockquote::after {
 
     i {
       width: 40px;
+    }
+  }
+}
+
+.social-vertical-list {
+  margin: 0 auto;
+
+  li {
+    list-style: none;
+    margin-bottom: 10px;
+
+    a {
+      text-decoration: none;
+
+      i {
+        display: inline-block;
+        width: 2em;
+        text-align: center;
+      }
+
+      span {}
     }
   }
 }
@@ -255,11 +289,56 @@ blockquote::after {
 }
 
 /*--------------------------------------------------------------
- # Side bar
+ # Side Profile Bar
 ---------------------------------------------------------------*/
-#sideNavigation {
-  .close-button:focus {
-    outline-width: 0;
+#sidebar {
+  padding: 0 1em;
+
+  .is-stuck {
+    padding-top: 4em;
+  }
+
+  /* Small Screens */
+  @media screen and (max-width: 39.9375em) {
+    padding: 1em;
+
+    .author-avatar {
+      width: 20%;
+      display: inline-block;
+    }
+
+    .author-info {
+      width: 70%;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 1rem;
+
+      div {
+        display: inline-block;
+
+        * {
+          margin-top: 0;
+        }
+      }
+
+      .social-links {
+        display: none;
+        position: absolute;
+        padding: 1em;
+        background: $body-background;
+        border: solid 1px $primary-color;
+
+        li {
+          display: inline-block;
+          margin: 0 0.5rem 0.5rem 0;
+        }
+      }
+
+      #sidebar-button {
+        display: inline-block;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -269,24 +348,22 @@ blockquote::after {
 header {
   text-align: center;
   margin-bottom: 50px;
-  padding: 20px 0;
+  padding: 20px;
   min-height: 200px;
 
   @include linear-gradient($primary-color, $secondary-color);
 
-  .row {
-    h1 {
-      font-size: 2.5em;
+  div {
+    * {
       color: $body-font-color;
+    }
+
+    h1 {
+      font-size: 3.5em;
 
       a {
         font-weight: 500;
-        color: $body-font-color;
       }
-    }
-
-    h5 {
-      color: $body-font-color;
     }
   }
 }
@@ -294,10 +371,14 @@ header {
 /*--------------------------------------------------------------
  # Side Panel
  --------------------------------------------------------------*/
-.off-canvas {
+#side-canvas-bar {
   background-color: $body-font-color;
   color: $body-background;
   padding: 60px 10px;
+
+  .close-button:focus {
+    outline-width: 0;
+  }
 
   .menu {
     li {
@@ -316,7 +397,7 @@ header {
 }
 
 /*--------------------------------------------------------------
- # Main Content
+ # Content
  --------------------------------------------------------------*/
 main {
   min-height: 400px;
@@ -325,35 +406,27 @@ main {
   transition: .3s ease all;
 }
 
-.page,
-.content {
-  width: 100%;
-  max-width: $content-width;
-  margin: auto;
-  padding: 20px;
-
-  @media screen and (max-width: $content-width) {
-    .column {
-      margin: -20px 0;
-    }
-  }
-}
-
-.content {
-  min-height: 50vh;
-}
-
 img {
   max-width: 100%;
 }
 
-.button {
-  border: 1px solid;
-  background: none;
-  font-size: 14px;
-  padding: 13px 30px;
-  text-decoration: none;
-  color: $primary-color;
+.full-window {
+  width: 100vw;
+  height: 100vh;
+}
+
+.center-title {
+  text-align: center !important;
+}
+
+.banner {
+  display: table;
+
+  .banner-contents {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -431,9 +504,6 @@ footer {
   margin-top: 2px;
 }
 
-/*--------------------------------------------------------------
-# Grid System
- --------------------------------------------------------------*/
-.row {
-  margin-bottom: 1rem;
+.centered {
+  margin: auto;
 }

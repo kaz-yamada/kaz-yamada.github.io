@@ -1,0 +1,9 @@
+<header>
+  <div>
+    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+    <h5>{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</h5>
+    {% if page.date %}
+      <span class="meta">Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</span>
+    {% endif %}
+  </div>
+</header><!-- Header -->

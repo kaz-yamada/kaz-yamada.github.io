@@ -1,0 +1,41 @@
+<div id="sidebar" data-sticky-container >
+  <div class="sticky" data-sticky data-top-anchor="page-content:top" >
+    {% if page.author and site.data.authors[page.author] %}
+      {% assign author = site.data.authors[page.author] %}
+    {% else %}
+      {% assign author = site.author %}
+    {% endif %}
+    
+    {% if author.avatar %}
+      <div class="author-avatar">
+        {% if author.avatar contains "://" %}
+          <img class="thumbnail" src="{{ author.avatar }}" alt="{{ author.name }}" >
+        {% else %}
+          <img class="thumbnail" src="{{ author.avatar | absolute_url }}" class="author__avatar" alt="{{ author.name }}">
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="author-info" >
+      {% if author.name %}
+        <div class="author-name">
+          <h6>{{ author.name }}</h6>
+        </div>
+      {% endif %}
+      {% if author.bio %}
+        <div class="author-bio" >
+          <p>{{ author.bio }}</p>
+        </div>
+      {% endif %}
+      {% if author.email %}
+      <div class="author-email">
+        <p>{{ author.email }}</p>
+      </div>
+      {% endif %}
+
+      <button id="sidebar-button" class="show-for-small-only button" >Socials</button>
+      <div class="social-links">
+        {% include social-list.html type="vertical" %}
+      </div>
+    </div>
+  </div>
+</div>

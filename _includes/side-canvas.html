@@ -1,31 +1,21 @@
-<div class="off-canvas position-left" id="sideNavigation" data-off-canvas data-transition="push">
-	<div class="row">
-		<div class="column">
+<div id="side-canvas-bar" class="off-canvas position-left" data-off-canvas data-transition="push">
+	<div class="grid-y grid-margin-y">
+		<!-- <div class="cell"> -->
 			<button class="close-button" aria-label="Close menu" type="button" data-close>
 			 	<span aria-hidden="true">&times;</span>
 			</button>
+		<!-- </div> -->
 
-			<div class="row">
-				{% assign default_paths = site.pages | map: "path" %}
-				{% assign page_paths = site.header_pages | default: default_paths %}
-				<ul class="vertical menu" data-drilldown>
-					<li><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></li>
-					{% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %} {% if my_page.title %}
-					<li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-					{% endif %} {% endfor %}					
-				</ul>
-			</div>
-
-			<p>Cold Sun by <a href="https://kaz-yamada.github.io/">Kazuki Yamada.</a> Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
-			<div class="row">
-				<ul class="social-icon-list">
-					{% for social in site.social %} {% if social.url != null %}
-					<li>
-						<a href="{{ social.url }}" title="{{ social.desc }}"><i class="fa fa-{{ social.icon }}"></i></a>
-					</li>
-					{% endif %} {% endfor %}
-				</ul>
-			</div>
+		<div class="cell">
+			{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+			<ul class="vertical menu" data-drilldown>
+				<li><a href="{{ '/' | relative_url }}">Home</a></li>
+				{% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %} {% if my_page.title %}
+				<li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+				{% endif %} {% endfor %}
+			</ul>
 		</div>
+
+		<p>Cold Sun by <a href="https://kaz-yamada.github.io/">Kazuki Yamada.</a> Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
 	</div>
 </div>

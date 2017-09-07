@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Kazuki Yamada
-email: kaz-yamada@outlook.com
+email: kaz.yamada@outlook.com
 description: Student, developer, human being.
 
 # the subpath of your site, e.g. /blog
@@ -27,68 +27,74 @@ baseurl:
 # the base hostname & protocol for your site, e.g. http://example.com
 url: "http://kaz-yamada.github.io"
 
+# Site Author Information
+author:
+  name: "Kazuki Yamada"
+  avatar: "https://avatars1.githubusercontent.com/u/20230684?v=4&u=3d6f9f3f0ba990545abac17e50369388c9722ebb&s=400"
+  bio: "Just another developer in Sydney."
+  email: 
+
 # Social icons and sharing options
+# name: Name of site
+# icon: respective fontAwesome icon (remove the fa-)
+# username: username for site (optional)
+# url: link to profile page of site
+
 social:
   - name: Twitter
     icon: twitter
     username:
     url:
-    share: true
 
   - name: Facebook
     icon: facebook
-    username: kazadamay
+    username:
     url: "https://www.facebook.com/kazadamay"
-    share: true
 
   - name: GitHub
     icon: github
-    username: kaz-yamada
-    url: "https://github.com/kaz-yamada"
-    share: false
+    username:
+    url: "https://github.com/kaz-yamada/"
 
   - name: LinkedIn
     icon: linkedin
-    username: kaz-yamada
-    url: "https://www.linkedin.com/in/kazuki-yamada-b27616123?trk=nav_responsive_tab_profile"
-    share: true
-
-  - name: Codepen
-    icon: codepen
     username:
-    url: "https://codepen.io/kaz-yamada/"
-    share: true
+    url: "https://www.linkedin.com/in/kaz-yamada/"
+
+  - name: Google+
+    icon: google-plus
+    username:
+    url:
 
   - name: YouTube
     icon: youtube
     username:
     url:
-    share: false
 
   - name: Instagram
     icon: instagram
     username:
     url:
-    share: false
 
   - name: Pinterest
     icon: pinterest
     username:
     url:
-    share: true
+
+  - name: Stackoverflow
+    icon: stack-overflow
+    username:
+    url: "https://stackoverflow.com/users/8009329/k-yamada"
+
+  - name: Codepen
+    icon: codepen
+    username:
+    url: "https://codepen.io/kaz-yamada/"
 
   - name: SoundCloud
     icon: soundcloud
     username:
     url:
-    share: false
-
-author:
-  name   : "Kazuki"
-  avatar :
-  bio    : "Biography goes here."
-  email  : # optional
-  uri    : "kaz-yamada.github.io"
 
 # Build settings
 markdown: kramdown
