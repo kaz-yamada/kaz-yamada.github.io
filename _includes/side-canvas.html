@@ -1,10 +1,9 @@
-<div id="side-canvas-bar" class="off-canvas position-left" data-off-canvas data-transition="push">
+<div id="side-canvas-bar" class="off-canvas position-left" data-off-canvas data-transition="overlap">
 	<div class="grid-y grid-margin-y">
 		<!-- <div class="cell"> -->
 			<button class="close-button" aria-label="Close menu" type="button" data-close>
 			 	<span aria-hidden="true">&times;</span>
 			</button>
-		<!-- </div> -->
 
 		<div class="cell">
 			{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
@@ -14,8 +13,7 @@
 				<li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
 				{% endif %} {% endfor %}
 			</ul>
-		</div>
-
+		</div><!-- .cell -->
 		<p>Cold Sun by <a href="https://kaz-yamada.github.io/">Kazuki Yamada.</a> Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a></p>
 	</div>
-</div>
+</div><!-- #side-canvas-bar -->

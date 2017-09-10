@@ -1,15 +1,22 @@
-<nav id="navbar" class="sticky-container" data-sticky-container>
-	<div data-sticky data-options="marginTop:0;" data-sticky-on="small">
-
+<nav id="navbar" data-sticky-container data-top-anchor=0>
+	<div class="sticky" data-sticky data-options="marginTop:0;" data-sticky-on="small" data-margin-top="0">
 		<div class="top-bar" id="main-nav">
 			<div class="top-bar-left">
-				<ul class="menu">
+				<ul class="menu show-for-small-only">
 					<li><button class="menu-icon" type="button" data-toggle="side-canvas-bar"></button></li>
 				</ul>
 			</div>
 			<div class="top-bar-right">
 				<ul class="menu">
-					<li><a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></li>
+					<li><a class="{% if page.title == my_page.title %}active{% endif %}" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a></li>
+					{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+					{% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %}
+				 		{% if my_page.title %}
+						<li class="hide-for-small-only">
+							<a class="{% if page.title == my_page.title %}active{% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+						</li>
+						{% endif %}
+				 {% endfor %}
 				</ul>
 			</div>
 		</div>

@@ -2,16 +2,16 @@
 layout: page
 title: Blog
 ---
-<div id="post-loop" class="row">
-	<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
-		{% for post in paginator.posts %}
-		{% include post-panel.html %}
-		{% endfor %}
+<div class="grid-container grid-margin-y">
+	<div id="post-loop" class="grid-container cell">
+		<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+			{% for post in paginator.posts %} {% include post-panel.html %} {% endfor %}
+		</div>
 	</div>
-</div>
 
-<div class="row">
-	<div class="medium-12 large-12 cell">
-		<p>subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></p>
+	<div class="grid-container cell">
+		<div class="small-12 cell">
+			<p>subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></p>
+		</div>
 	</div>
 </div>

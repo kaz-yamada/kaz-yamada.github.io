@@ -1,16 +1,28 @@
----
-layout: default
----
-{% include header.html %}
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-<div class="page grid-container">
-  <div class="grid-x grid-padding-x grid-margin-y">
-    <div class="cell large-3 medium-4">
-      {% include sidebar.html %}
+<body id="page-with-sidebar">
+	{% include side-canvas.html %}
+	{% include topbar.html %}
+
+	<main class="off-canvas-content" data-off-canvas-content>
+
+    {% include header.html %}
+
+    <div class="page grid-container">
+      <div class="grid-x grid-padding-x grid-margin-y">
+        <div class="cell large-3 medium-4 small-12">
+          {% include profile-column.html %}
+        </div>
+        <div id="page-content" class="cell auto">
+          {{ content }}
+      		{% include footer.html %}
+        </div>
+      </div>
     </div>
-    <div id="page-content" class="cell auto">
-      {{ content }}
-    </div>
-  </div>
-</div>
-<!-- Page -->
+	</main>
+	<!-- .main-->
+</body>
+
+</html>

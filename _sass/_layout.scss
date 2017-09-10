@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -28,24 +36,19 @@ h6 {
   font-family: $font-style;
   font-weight: 500;
   line-height: 1.5;
-  color: $primary-color;
   margin: 1rem 0;
 }
 
 h1 {
-  color: $primary-color;
   font-size: 2.5em;
 
   a,
   a:visited {
     text-decoration: none;
-    color: $primary-color;
   }
 
   a:focus,
-  a:hover {
-    color: $link-hover-color;
-  }
+  a:hover {}
 }
 
 h2 {
@@ -54,25 +57,17 @@ h2 {
   a,
   a:visited {
     text-decoration: none;
-    color: $primary-color;
   }
 
   a:focus,
-  a:hover {
-    color: $link-hover-color;
-  }
+  a:hover {}
 }
 
 a,
-a:visited {
-  color: $primary-color;
-  text-decoration: underline;
-}
+a:visited {}
 
 a:focus,
-a:hover {
-  color: $link-hover-color;
-}
+a:hover {}
 
 pre {
   margin: 1.1em 0;
@@ -82,28 +77,6 @@ pre {
   white-space: pre;
   border: 1px solid #ccc;
   border-left: 10px solid;
-}
-
-table {
-  border-spacing: 0;
-
-  thead {
-    tr {
-      th {
-        color: $body-background;
-        border-bottom: 7px solid $primary-color;
-        font-weight: 600;
-        padding: .75em;
-        text-align: left;
-      }
-    }
-  }
-
-  tbody {
-    tr:nth-child(even) {
-      background-color: $body-background;
-    }
-  }
 }
 
 dl,
@@ -136,10 +109,6 @@ blockquote::after {
 /*--------------------------------------------------------------
 # Foundation Customisation
 --------------------------------------------------------------*/
-select.button {
-  padding-right: 2em;
-}
-
 .accordion {
   .accordion-title {
     text-decoration: none;
@@ -178,6 +147,11 @@ select.button {
       text-align: center;
       font-size: 20px;
       line-height: 45px;
+
+      &:hover,
+      &:focus {
+        color: $secondary-color;
+      }
     }
 
     i {
@@ -222,7 +196,7 @@ select.button {
   }
 
   button {
-    height: 20px;
+    // height: 20px;
     margin-left: 10px;
   }
 
@@ -242,10 +216,6 @@ select.button {
       line-height: 1.5;
       text-decoration: none;
     }
-
-    a:hover {
-      background: $link-hover-color;
-    }
   }
 
   .menu {
@@ -259,11 +229,30 @@ select.button {
         color: $body-font-color;
         text-decoration: none;
         padding: 1rem;
-        line-height: 1.5;
-      }
+        line-height: 1;
+        position: relative;
 
-      a:hover {
-        background: $link-hover-color;
+        &:after {
+          content: "";
+          height: 2px;
+          transition: transform ease-out 0.5s;
+          background: $body-font-color;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 5px;
+
+          @include scale(0);
+        }
+
+        &.active:after,
+        &:hover:after {
+          display: block;
+          width: 75%;
+          margin: auto;
+
+          @include scale(1);
+        }
       }
 
       input,
@@ -324,9 +313,9 @@ select.button {
       .social-links {
         display: none;
         position: absolute;
-        padding: 1em;
         background: $body-background;
-        border: solid 1px $primary-color;
+
+        @include contenet-boxes($primary-color, 1em);
 
         li {
           display: inline-block;
@@ -369,7 +358,7 @@ header {
 }
 
 /*--------------------------------------------------------------
- # Side Panel
+ # Side Canvas Panel
  --------------------------------------------------------------*/
 #side-canvas-bar {
   background-color: $body-font-color;
@@ -421,11 +410,26 @@ img {
 
 .banner {
   display: table;
+  position: relative;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  @include dark-overlay;
+
+  &:after {
+    background: rgba(0, 0, 0, 0.4);
+  }
 
   .banner-contents {
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
+    @include absolute-center;
+
+    * {
+      z-index: 4;
+      text-align: center;
+    }
   }
 }
 
@@ -443,9 +447,9 @@ img {
 
   .post-panel {
     min-height: 400px;
-    border: 1px solid $primary-color;
-    padding: 20px;
     position: relative;
+
+    @include contenet-boxes;
 
     time {
       display: block;
@@ -473,11 +477,12 @@ img {
 /*--------------------------------------------------------------
   ## Projects
 --------------------------------------------------------------*/
-#projects {
-  .panel {
-    border: 1px solid $primary-color;
-    padding: 20px;
+#repository {
+  .cell {
     margin-bottom: 20px;
+    word-wrap: break-word;
+
+    @include contenet-boxes;
   }
 }
 

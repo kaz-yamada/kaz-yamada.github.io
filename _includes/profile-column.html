@@ -1,11 +1,11 @@
 <div id="sidebar" data-sticky-container >
-  <div class="sticky" data-sticky data-top-anchor="page-content:top" >
+  <div class="sticky" data-sticky data-top-anchor="page-content:top" data-options="data-sticky-on-medium" >
     {% if page.author and site.data.authors[page.author] %}
       {% assign author = site.data.authors[page.author] %}
     {% else %}
       {% assign author = site.author %}
     {% endif %}
-    
+
     {% if author.avatar %}
       <div class="author-avatar">
         {% if author.avatar contains "://" %}

@@ -1,7 +1,4 @@
-// Foundation JavaScript
-// Documentation can be found at: http://foundation.zurb.com/docs
-
+$( document ).foundation();
 $( '#sidebar-button' ).on( 'click', function() {
   $( '.social-links' ).slideToggle( "fast" );
-  console.log( 'taco' );
 } );

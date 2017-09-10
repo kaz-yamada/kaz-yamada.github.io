@@ -1,18 +1,7 @@
 ---
-layout: default
+layout: page-with-sidebar
 ---
 <div class="post">
-	{% include header.html %}
-
-	<div class="page grid-container">
-		<div class="grid-x grid-padding-x grid-margin-y">
-			<div class="cell large-3 medium-4">
-				{% include sidebar.html %}
-			</div>
-			<div id="page-content" class="cell auto">
-				{{ content }}
-			</div>
-		</div>
-	</div>
+	{{ content }}
 </div>
 <!-- .post -->
