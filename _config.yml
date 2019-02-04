@@ -93,4 +93,4 @@ defaults:
   - values:
       layout: "page"
 
-remote_theme: kazyamada/Cold_Sun
+remote_theme: kaz-yamada/Cold_Sun
