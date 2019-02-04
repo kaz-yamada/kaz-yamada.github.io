@@ -117,4 +117,4 @@ defaults:
     values:
       layout: "page"
 
-theme: jekyll-theme-minimal
+remote_theme: kazyamada/Cold_Sun
