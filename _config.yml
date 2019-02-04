@@ -41,11 +41,6 @@ author:
 # url: link to profile page of site
 
 social:
-  - name: Twitter
-    icon: twitter
-    username:
-    url:
-
   - name: Facebook
     icon: facebook
     username:
@@ -53,34 +48,14 @@ social:
 
   - name: GitHub
     icon: github
-    username:
+    username: "kaz-yamada"
     url: "https://github.com/kaz-yamada/"
 
   - name: LinkedIn
     icon: linkedin
-    username:
+    username: "kaz-yamada"
     url: "https://www.linkedin.com/in/kaz-yamada/"
-
-  - name: Google+
-    icon: google-plus
-    username:
-    url:
-
-  - name: YouTube
-    icon: youtube
-    username:
-    url:
-
-  - name: Instagram
-    icon: instagram
-    username:
-    url:
-
-  - name: Pinterest
-    icon: pinterest
-    username:
-    url:
-
+    
   - name: Stackoverflow
     icon: stack-overflow
     username:
@@ -91,30 +66,31 @@ social:
     username:
     url: "https://codepen.io/kaz-yamada/"
 
-  - name: SoundCloud
-    icon: soundcloud
-    username:
-    url:
-
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate  
+  - jekyll-remote-theme
 exclude:
   - Gemfile
   - Gemfile.lock
-sass:
-  sass_dir: _sass
-include: ['_pages']
+  - node_modules
+  - bower_components
+  - src
+  - gulpfile.js
+  - webpack.config.js
+# sass:
+#   sass_dir: src/_sass
+#   style: compressed
+include: ["_pages"]
 kramdown:
   input: GFM
 paginate: 9
 paginate_path: "/blog/page:num/"
 defaults:
-  -
-    values:
+  - values:
       layout: "page"
 
 remote_theme: kazyamada/Cold_Sun
